@@ -1,6 +1,7 @@
 package bugaga.comsgu.vk.www.guess;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,7 +24,9 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); //Запрет смены экрана
+        setContentView(R.layout.activity_main);                             // Запуск активности Мейн
+
     //    textView= (TextView)findViewById(R.id.textView);
 
     }

@@ -1,5 +1,6 @@
 package bugaga.comsgu.vk.www.guess;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
@@ -23,6 +24,7 @@ public class MainStart extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_start);
         textView= (TextView)findViewById(R.id.textView);
         textView2= (TextView)findViewById(R.id.textView2);
@@ -32,6 +34,7 @@ public class MainStart extends ActionBarActivity {
         textView.setText("Вы загадали " +a +"?");
         column=1;
         textView2.setText(" " +column +" ");
+
 
     }
 
