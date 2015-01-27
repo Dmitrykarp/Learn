@@ -1,0 +1,35 @@
+// Рабочий вариант бинарного поиска
+import java.util.Random;
+
+public class Learn {
+	 
+        public static void main(String[] args) {
+        	Random random = new Random();
+                int right=100, key=12, left=1; // х - Диапазон, Z - Загаданное число Исключени 1,51...
+               //если 100
+                
+       
+                
+                
+               
+      int column=0, mid=-12;
+while(key!=mid){
+       
+       mid=(left+right)/2;
+       System.out.println(mid);
+             if(key<mid){right=mid-1;} else left=mid+1;
+             column++;
+                }
+               
+System.out.println("Вы загадали " +mid +" Использованно " +column + " попыток.");
+                
+               
+                
+                
+                
+                
+
+        }
+       
+        
+}
