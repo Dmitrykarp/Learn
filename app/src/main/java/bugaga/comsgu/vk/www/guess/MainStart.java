@@ -15,6 +15,11 @@ public class MainStart extends ActionBarActivity {
     private Button bMense;
     private Button bBolse;
     private Button bGuess;
+
+    int left=1;
+    int right=100;
+    int a=(left+right)/2; // х y - Диапазон,
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,32 +29,33 @@ public class MainStart extends ActionBarActivity {
         bMense=(Button)findViewById(R.id.bLft);
         bBolse=(Button) findViewById(R.id.bRght);
         bGuess=(Button) findViewById(R.id.bGss);
-      //  textView.setText("Вы загадали " +50 +"?");
-        column=0;
+        textView.setText("Вы загадали " +a +"?");
+        column=1;
         textView2.setText(" " +column +" ");
 
     }
-     int x=100;
-     int y=0;
-     int a=0; // х y - Диапазон,
+
     int column;
     public void setTextView(TextView textView) {
         this.textView = textView;
     }
     public void bMense(View view){
-        column++;
-        a=y+(x-y)/2;
-        textView.setText("Вы загадали " +a +"?");
-        textView2.setText(" " +column +" ");
-        x=a-1;
+        if(left==right){textView.setText("Нет! Вы загадали " + a + "!");} else {
+            column++;
+            right = a - 1;
+            a = (left + right) / 2;
+            textView.setText("Вы загадали " + a + "?");
+            textView2.setText(" " + column + " ");
+        }
     }
     public void bBolse(View view){
-        column++;
-
-        a=y+(x-y)/2;;
-        textView.setText("Вы загадали " +a +"?");
-        textView2.setText(" " +column +" ");
-        y=a+1;
+        if(left==right){textView.setText("Нет! Вы загадали " + a + "!");} else {
+            column++;
+            left = a + 1;
+            a = (left + right) / 2;
+            textView.setText("Вы загадали " + a + "?");
+            textView2.setText(" " + column + " ");
+        }
     }
     public void bGuess(View view){
         textView.setText("Угадал!");
